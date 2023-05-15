@@ -23,7 +23,7 @@ function easyMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "やさしいレベルです";
+  document.getElementById('message').textContent = "「やさしい」を せんたくしています";
 }
 
 //ふつうを選択
@@ -42,7 +42,7 @@ function normalMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "ふつうレベルです";
+  document.getElementById('message').textContent = "「ふつう」を せんたくしています";
 }
 
 //むずかしいを選択
@@ -61,7 +61,7 @@ function hardMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "むずかしいレベルです";
+  document.getElementById('message').textContent = "「むずかしい」を せんたくしています";
 }
 
 //レベル選択に戻る
