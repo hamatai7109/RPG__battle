@@ -147,38 +147,50 @@
 
 .status{
   color: #ffffff;
-  background-color: #4c4c4c;
+  background-color: rgb(76, 76, 76, 0.6);
+  border: 2px solid #ffffff;
   margin: 0 auto;
 }
 
+.commandBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.buttonBox{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button{
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  width: 100%;
+  background-color: rgb(76, 76, 76, 0.6);
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  display: none;
+}
+
 .messageBox{
-  background-color: #c4c4c4;
   width: 50%;
-  margin: 0 auto;
+  height: 100%;
+  border: 2px solid #ffffff;
+  background-color: rgb(76, 76, 76, 0.6);
   position: relative;
 }
 
 .messageText{
-  color: #000000;
+  color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.buttonBox{
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.button{
-  padding: 20px 40px;
-  border-radius: 20px;
-  background-color: #4c4c4c;
-  color: #ffffff;
-  display: none;
 }
 
 .active{
@@ -186,10 +198,6 @@
 }
 
 @media screen and (min-width: 796px) { /* pc用スタイル */
-  .img{
-    height: 350px;
-  }
-
   .lifeBox{
     height: 15px;
     width: 250px;
@@ -200,13 +208,25 @@
     padding: 8px 25px;
   }
 
-  .messageBox{
-    height: 100px;
+  .img{
+    height: 350px;
+  }
+
+  .commandBox{
+    height: 150px;
+  }
+
+  .button{
+    padding: 5px 20px;
+    font-size: 14px;
+  }
+
+  .messageText{
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 795px) { /* sp用スタイル */
-
   .container{
     display: flex;
     flex-direction: column;
@@ -224,12 +244,20 @@
     padding: 4px 18px;
   }
 
-  .messageBox{
-    height: 60px;
-  }
-
   .img{
     height: 180px;
   }
 
+  .commandBox{
+    height: 100px;
+  }
+
+  .button{
+    padding: 2px 10px;
+    font-size: 12px;
+  }
+
+  .messageText{
+    font-size: 15px;
+  }
 }

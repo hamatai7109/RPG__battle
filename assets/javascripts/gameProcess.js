@@ -118,7 +118,7 @@ async function enemyEncounter(){
 
 //プレイヤーのコマンドセット
 function playerSet(){
-  document.getElementById('message').style.color = '#000000';
+  document.getElementById('message').style.color = '#ffffff';
   document.getElementById('message').textContent = "たたかう";
   document.getElementById('playerAttack').classList.add('active');  
   document.getElementById('playerHeal').classList.add('active');  
@@ -130,7 +130,6 @@ function playerMoveStart(){
   document.getElementById('playerAttack').classList.remove('active');
   document.getElementById('playerHeal').classList.remove('active');
   document.getElementById('gigadein').classList.remove('active');
-  document.getElementById('message').style.color = '#ff0000';
 }
 
 //プレイヤーが勝利の場合のエンドロール
@@ -147,7 +146,7 @@ async function playerWin(){
         fill: 'forwards'
       }
     );
-  document.getElementById('message').style.color = '#000000';
+  document.getElementById('message').style.color = '#ffffff';
   document.getElementById('monsterHp').textContent = monsterCurrentHp;
   document.getElementById('message').textContent = monsterName + "をやっつけた！";
   await sleep(1000);
@@ -175,7 +174,7 @@ function playerLose(){
         fill: 'forwards'
       }
     );
-  document.getElementById('message').style.color = '#000000';
+  document.getElementById('message').style.color = '#ffffff';
   document.getElementById('message').textContent = player.name + "は力尽きてしまった、、、";
   document.getElementById('playAgain').classList.add('active');
 }

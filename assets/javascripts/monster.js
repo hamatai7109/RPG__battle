@@ -9,7 +9,6 @@ let monsterLv;
 //モンスターの攻撃プロセス
 async function monsterAttack(){
   playerTempHp = playerCurrentHp
-  document.getElementById('message').style.color = '#0000ff';
   document.getElementById('message').textContent = monsterName + "のターン！";
   await sleep(1000);
 
