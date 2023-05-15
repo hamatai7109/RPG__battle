@@ -81,19 +81,18 @@ function userInput(){
   document.getElementById('playerHp').textContent = playerCurrentHp;  
   document.getElementById('playerMp').textContent = player.mp;  
   // document.getElementById('playerLv').textContent = player.lv;
+  // document.getElementById('yourName').textContent = 'テスト';  
 
-  document.getElementById('yourName').textContent = 'テスト';  
-
-  // let flag = true; 
-  // while(flag){
-  //   const yourName = prompt("あなたの名前はなんですか");
-  //   if(yourName){
-  //     document.getElementById('yourName').textContent = yourName;  
-  //     flag = false;
-  //   }else{
-  //     alert("名前を入力してください");
-  //   }
-  // }
+  let flag = true; 
+  while(flag){
+    const yourName = prompt("あなたの名前はなんですか");
+    if(yourName){
+      document.getElementById('yourName').textContent = yourName;  
+      flag = false;
+    }else{
+      alert("名前を入力してください");
+    }
+  }
 }
 
 //バトル開始
@@ -109,7 +108,7 @@ async function BattleStart(){
 //魔物が出現
 async function enemyEncounter(){
   document.getElementById('message').textContent = (monsterName + "が あらわれた！！！");
-  await sleep(2000);
+  await sleep(1000);
   document.getElementById('monster').classList.add('show');
   document.getElementById('monsterName').textContent = monsterName;
   document.getElementById('monsterHp').textContent = monsterCurrentHp;
