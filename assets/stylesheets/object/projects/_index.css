@@ -1,0 +1,224 @@
+/* 共通スタイルは外に書く */
+/* .loading{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+}
+
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+.loading .circle {
+  display: block;
+  position: relative;
+  top: calc( 50% - 20px );
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 8px solid #e0e0e0;
+  border-top: 7px solid #ffcccc;
+  border-radius: 50px;
+  animation: loading 0.7s linear 0ms infinite normal both;
+}
+
+@keyframes loading {
+  0% { transform: rotate( 0deg ); }
+  100% { transform: rotate( 360deg ); }
+}
+ */
+.container{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../../images/common/field.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.merazomaImg, .gigadeinImg, .hoimiImg, .fireBreath{
+  position: absolute;
+  z-index: 999;
+  opacity:0;
+}
+
+.merazomaImg{
+  top: 0;
+  left: 80%;
+  height: 300px;
+}
+
+.gigadeinImg{
+  top: 0;
+  left: 50%;
+  height:300px;
+}
+
+.hoimiImg{
+  top: 0%;
+  left: 25%;
+  height: 350px;
+}
+
+.fireBreath{
+  top: 10%;
+  left: 30%;
+  height: 350px;
+  filter: blur(3px);
+  opacity: 0;
+}
+
+.battleField{
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.playerHpText, .monsterHpText{
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  top: 20%;
+}
+
+.playerHpText{
+  left: 20%;
+}
+
+.monsterHpText{
+  left: 110%;
+}
+
+.lifeBox{
+  border: 2px solid #000000;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.lifeLine{
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #52B50F;
+}
+
+.monster{
+  position: relative;
+  left: 100%;
+  transform: translateX(100%);
+  transition: 2s !important;
+}
+
+.show {
+  left: -5%;
+  transform: translateX(0%);
+}
+
+.img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.statusBox{
+  margin-top: 10px;
+}
+
+.status{
+  color: #ffffff;
+  background-color: #4c4c4c;
+  margin: 0 auto;
+}
+
+.messageBox{
+  background-color: #c4c4c4;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.messageText{
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttonBox{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button{
+  padding: 20px 40px;
+  border-radius: 20px;
+  background-color: #4c4c4c;
+  color: #ffffff;
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+@media screen and (min-width: 796px) { /* pc用スタイル */
+  .img{
+    height: 350px;
+  }
+
+  .lifeBox{
+    height: 15px;
+    width: 250px;
+  }
+
+  .status{
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+
+  .messageBox{
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 795px) { /* sp用スタイル */
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lifeBox{
+    height: 12px;
+    width: 120px;
+  }
+
+  .status{
+    font-size: 12px;
+    padding: 4px 18px;
+  }
+
+  .messageBox{
+    height: 60px;
+  }
+
+  .img{
+    height: 180px;
+  }
+
+}

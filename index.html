@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/stylesheets/app.css">
+  <script type="text/javascript" src="assets/javascripts/gameProcess.js"></script>
+  <script type="text/javascript" src="assets/javascripts/judge.js"></script>
+  <script type="text/javascript" src="assets/javascripts/class.js"></script>
+  <script type="text/javascript" src="assets/javascripts/playerHp.js"></script>
+  <script type="text/javascript" src="assets/javascripts/playerAttack.js"></script>
+  <script type="text/javascript" src="assets/javascripts/playerMagic.js"></script>
+  <script type="text/javascript" src="assets/javascripts/monster.js"></script>
+  <script type="text/javascript" src="assets/javascripts/monsterHp.js"></script>
+  <script type="text/javascript" src="assets/javascripts/oneEyeMove.js"></script>
+  <script type="text/javascript" src="assets/javascripts/suraimuMove.js"></script>
+  <script type="text/javascript" src="assets/javascripts/dragonMove.js"></script>
+  <script type="text/javascript" src="assets/javascripts/test.js"></script>
+</head>
+<body>
+  <div class="loading" id="loading"><span class="circle"></span></div>
+  <div class="container">
+    <img src="assets/images/common/Merazoma.png" alt="メラゾーマ" class="merazomaImg" id="merazomaImg">
+    <img src="assets/images/common/Gigadein.png" alt="ギガデイン" class="gigadeinImg" id="gigadeinImg">
+    <img src="assets/images/common/Hoimi.png" alt="ホイミ" class="hoimiImg" id="hoimiImg">
+    <img src="assets/images/common/fireBreath.png" alt="ひのいき" class="fireBreath" id="fireBreath">
+    <div class="battleField">
+      <div class="player" id="player">
+        <p class="playerHpText" id="playerHpText"></p>
+        <div class="imgBox playerImg" id="playerImg"><img src="assets/images/common/player.png" alt="プレイヤー" class="img"></div>
+        <div class="lifeBox" id="playerLifeBox"><span class="lifeLine" id="playerLife"></span></div>
+        <div class="statusBox">
+          <table class="status">
+            <tr>
+              <th>名前：</th>
+              <td id="yourName"></td>
+            </tr>
+            <tr>
+              <th>HP：</th>
+              <td id="playerHp"></td>
+            </tr>
+            <tr>
+              <th>MP：</th>
+              <td id="playerMp"></td>
+            </tr>
+            <!-- <tr>
+              <th>Lv：</th>
+              <td id="playerLv"></td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+      <div class="monster" id="monster">
+        <p class="monsterHpText" id="monsterHpText"></p>
+        <div class="imgBox monsterImg" id="monsterImg"></div>
+        <div class="lifeBox" id="monsterLifeBox"><span class="lifeLine" id="monsterLife"></span></div>
+        <div class="statusBox">
+          <table class="status"><!-- style="display: none;" -->
+            <tr>
+              <th>名前：</th>
+              <td id="monsterName"></td>
+            </tr>
+            <tr>
+              <th>HP：</th>
+              <td id="monsterHp"></td>
+            </tr>
+            <tr>
+              <th>MP：</th>
+              <td id="monsterMp"></td>
+            </tr>
+            <!-- <tr>
+              <th>Lv：</th>
+              <td id="monsterLv"></td>
+            </tr> -->
+          </table>  
+        </div>
+      </div>
+    </div>
+    <div class="messageBox">
+      <p class="messageText" id="message">むずかしさをえらんでね</p>
+    </div>
+    <div class="buttonBox">
+      <input type="button" value="バトル開始" onclick="BattleStart()" class="button" id="battleStart">
+      <input type="button" value="やさしい" onclick="easyMode()" class="button active" id="easyMode">
+      <input type="button" value="ふつう" onclick="normalMode()" class="button active" id="normalMode">
+      <input type="button" value="むずかしい" onclick="hardMode()" class="button active" id="hardMode">
+      <input type="button" value="もどる" onclick="levelChooseBack()" class="button" id="levelChooseBack">
+      <input type="button" value="攻撃" onclick="playerAttack()" class="button" id="playerAttack">
+      <input type="button" value="ホイミ" onclick="playerHeal()" class="button" id="playerHeal">      
+      <input type="button" value="ギガデイン" onclick="Gigadein()" class="button" id="gigadein">      
+      <input type="button" value="もう一度対戦する" onclick="playAgain()" class="button" id="playAgain">
+    </div>
+  </div>
+</body>
+</html>
