@@ -1,8 +1,7 @@
-const loading = document.getElementById( 'loading' );
-
-window.addEventListener( 'load', () => {
-  loading.classList.add( 'hide' );
-}, false );
+//ローディング画面の表示
+window.addEventListener( 'load', function(){
+  document.getElementById('loading').classList.add( 'hide' );
+});
 
 //非同期処理の変数宣言
 const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
