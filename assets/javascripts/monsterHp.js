@@ -2,7 +2,7 @@
 let monsterTempHp;
 
 //モンスターのHPゲージを変更
-function setMonsterHp(){
+async function setMonsterHp(){
   monsterHpBefore = monsterTempHp / monsterMaxHp * 100;
   monsterHpAfter = monsterCurrentHp / monsterMaxHp * 100;
 
@@ -13,7 +13,7 @@ function setMonsterHp(){
     document.getElementById('monsterLife').animate(
       [
         {transform: 'translateX('+c+'%)', backgroundColor: '#92E8E0'},
-        {transform: 'translateX('+d+'%)', backgroundColor: '#52B50F'}
+        {transform: 'translateX('+d+'%)'}
       ],
       {
         duration: 1000,
@@ -24,7 +24,7 @@ function setMonsterHp(){
     document.getElementById('monsterLife').animate(
       [
         {transform: 'translateX('+c+'%)', backgroundColor: '#ff0000'},
-        {transform: 'translateX('+d+'%)', backgroundColor: '#52B50F'}
+        {transform: 'translateX('+d+'%)'}
       ],
       {
         duration: 1000,
@@ -33,6 +33,14 @@ function setMonsterHp(){
     );
   }else{ //HPに何も変化がない（HPがMaxで回復した場合など）
     ;
+  }
+  sleep(1000);
+  if(monsterHpAfter <= 100 && monsterHpAfter > 50){
+    document.getElementById('monsterLife').style.backgroundColor = '#52B50F';
+  }else if(monsterHpAfter <= 50 && monsterHpAfter > 20){
+    document.getElementById('monsterLife').style.backgroundColor = '#FFE524';
+  }else{
+    document.getElementById('monsterLife').style.backgroundColor = '#ff0000';
   }
 }
 

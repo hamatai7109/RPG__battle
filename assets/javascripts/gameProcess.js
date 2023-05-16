@@ -23,7 +23,7 @@ function easyMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "「やさしい」を せんたくしています";
+  document.getElementById('message').textContent = "「やさしい」";
 }
 
 //ふつうを選択
@@ -42,7 +42,7 @@ function normalMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "「ふつう」を せんたくしています";
+  document.getElementById('message').textContent = "「ふつう」";
 }
 
 //むずかしいを選択
@@ -61,7 +61,7 @@ function hardMode(){
   document.getElementById('normalMode').classList.remove('active');  
   document.getElementById('hardMode').classList.remove('active');  
 
-  document.getElementById('message').textContent = "「むずかしい」を せんたくしています";
+  document.getElementById('message').textContent = "「むずかしい」";
 }
 
 //レベル選択に戻る
@@ -81,18 +81,18 @@ function userInput(){
   document.getElementById('playerHp').textContent = playerCurrentHp;  
   document.getElementById('playerMp').textContent = player.mp;  
   // document.getElementById('playerLv').textContent = player.lv;
-  // document.getElementById('yourName').textContent = 'テスト';  
+  document.getElementById('yourName').textContent = 'テスト';  
 
-  let flag = true; 
-  while(flag){
-    const yourName = prompt("あなたの名前はなんですか");
-    if(yourName){
-      document.getElementById('yourName').textContent = yourName;  
-      flag = false;
-    }else{
-      alert("名前を入力してください");
-    }
-  }
+  // let flag = true; 
+  // while(flag){
+  //   const yourName = prompt("あなたの名前はなんですか");
+  //   if(yourName){
+  //     document.getElementById('yourName').textContent = yourName;  
+  //     flag = false;
+  //   }else{
+  //     alert("名前を入力してください");
+  //   }
+  // }
 }
 
 //バトル開始
@@ -123,6 +123,7 @@ function playerSet(){
   document.getElementById('playerAttack').classList.add('active');  
   document.getElementById('playerHeal').classList.add('active');  
   document.getElementById('gigadein').classList.add('active');
+  document.getElementById('runAway').classList.add('active');
 }
 
 //プレイヤーの行動開始
@@ -130,6 +131,7 @@ function playerMoveStart(){
   document.getElementById('playerAttack').classList.remove('active');
   document.getElementById('playerHeal').classList.remove('active');
   document.getElementById('gigadein').classList.remove('active');
+  document.getElementById('runAway').classList.remove('active');
 }
 
 //プレイヤーが勝利の場合のエンドロール
@@ -184,3 +186,25 @@ function playAgain(){
   window.location.reload();
 }
 
+//にげる
+function runAway(){
+  document.getElementById('message').textContent = "ほんとうに にげますか"
+  document.getElementById('yes').classList.add('active');
+  document.getElementById('no').classList.add('active');
+  document.getElementById('playerAttack').classList.remove('active');
+  document.getElementById('playerHeal').classList.remove('active');
+  document.getElementById('gigadein').classList.remove('active');
+  document.getElementById('runAway').classList.remove('active');
+}
+
+//にげる▶「はい」
+function yes(){
+  window.location.reload();
+}
+
+//にげる▶「いいえ」
+function no(){
+  document.getElementById('yes').classList.remove('active');
+  document.getElementById('no').classList.remove('active');
+  playerSet();
+}

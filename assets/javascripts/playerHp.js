@@ -3,7 +3,7 @@ let playerCurrentHp = player.currentHp;
 let playerTempHp;
 
 //プレイヤーのHPゲージを変更
-function setPlayerHp(){
+async function setPlayerHp(){
   playerHpBefore = playerTempHp / player.maxHp * 100;
   playerHpAfter = playerCurrentHp / player.maxHp * 100;
 
@@ -14,7 +14,7 @@ function setPlayerHp(){
     document.getElementById('playerLife').animate(
       [
         {transform: 'translateX('+a+'%)', backgroundColor: '#92E8E0'},
-        {transform: 'translateX('+b+'%)', backgroundColor: '#52B50F'}
+        {transform: 'translateX('+b+'%)'}
       ],
       {
         duration: 1000,
@@ -24,8 +24,8 @@ function setPlayerHp(){
   }else if(a > b){ //ダメージを受ける
     document.getElementById('playerLife').animate(
       [
-        {transform: 'translateX('+a+'%)', backgroundColor: '#ff0000'},
-        {transform: 'translateX('+b+'%)', backgroundColor: '#52B50F'}
+        {transform: 'translateX('+a+'%)',backgroundColor: '#ff0000'},
+        {transform: 'translateX('+b+'%)'}
       ],
       {
         duration: 1000,
@@ -35,10 +35,18 @@ function setPlayerHp(){
   }else{ //HPに何も変化がない（HPがMaxで回復した場合など）
     ;
   }
+  sleep(1000);
+  if(playerHpAfter <= 100 && playerHpAfter > 50){
+    document.getElementById('playerLife').style.backgroundColor = '#52B50F';
+  }else if(playerHpAfter <= 50 && playerHpAfter > 20){
+    document.getElementById('playerLife').style.backgroundColor = '#FFE524';
+  }else{
+    document.getElementById('playerLife').style.backgroundColor = '#ff0000';
+  }
 }
 
 //ダメージを受けてHPが減る時に、文字をふわっと浮かばせて消す。
-function playerDamageText(){
+function playerDamageText(){ 
   document.getElementById('playerHpText').textContent = '-' + damagePoint;
   document.getElementById('playerHpText').style.textShadow = '3px 3px #ff0000';
   document.getElementById('playerHpText').animate( //文字がふわっと浮かんで消える。

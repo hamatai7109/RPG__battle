@@ -177,7 +177,13 @@
   color: #ffffff;
   text-align: left;
   cursor: pointer;
+  transition: all 0.1s linear;
   display: none;
+}
+
+.button:hover{
+  color:rgb(76, 76, 76);
+  background-color: rgb(255, 255, 255, 0.6);
 }
 
 .messageBox{
