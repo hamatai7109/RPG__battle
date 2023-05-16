@@ -2,10 +2,10 @@
 // Foundation
 // ==========================================================================*/
 
-@import 'foundation/_reset.css';
-@import 'foundation/_base.css';
-@import 'foundation/_var.css';
-@import 'foundation/_font.css';
+@import 'foundation/reset.css';
+@import 'foundation/base.css';
+@import 'foundation/var.css';
+@import 'foundation/font.css';
 
 /*// ==========================================================================
 // Layout
@@ -25,10 +25,10 @@
 // Project
 // -----------------------------------------------------------------*/
 
-@import 'object/projects/_index.css';
+@import 'object/projects/index.css';
 
 /*// -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------*/
 
-@import 'utilities/_utility.css';
+@import 'utilities/utility.css';
