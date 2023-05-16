@@ -2,15 +2,10 @@
 // Foundation
 // ==========================================================================*/
 
-/* @import 'foundation/_reset.css';
+@import 'foundation/_reset.css';
 @import 'foundation/_base.css';
 @import 'foundation/_var.css';
-@import 'foundation/_font.css'; */
-
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/foundation/_reset.css';
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/foundation/_base.css';
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/foundation/_var.css';
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/foundation/_font.css';
+@import 'foundation/_font.css';
 
 /*// ==========================================================================
 // Layout
@@ -30,13 +25,10 @@
 // Project
 // -----------------------------------------------------------------*/
 
-/* @import 'object/projects/_index.css'; */
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/object/projects/_index.css';
+@import 'object/projects/_index.css';
 
 /*// -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------*/
 
-/* @import 'utilities/_utility.css'; */
-@import 'https://hamatai7109.github.io/RPG__battle/assets/stylesheets/utilities/_utility.css';
-
+@import 'utilities/_utility.css';

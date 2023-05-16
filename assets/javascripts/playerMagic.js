@@ -30,6 +30,8 @@ async function playerHeal(){
     setPlayerHp();
   }else{
     document.getElementById('message').textContent = "しまった。。MPがたりない!";
+    await sleep(1000);//animateで1000ミリ秒かかっている分を待つ。
+    playerSet();
   }
   await sleep(1000);
   monsterAttack();
@@ -69,6 +71,6 @@ async function Gigadein(){
   }else{
     document.getElementById('message').textContent = "しまった。。MPがたりない!";
     await sleep(1000);
-    monsterAttack();
+    playerSet();
   }
 }

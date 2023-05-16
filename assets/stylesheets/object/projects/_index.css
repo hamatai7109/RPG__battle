@@ -95,20 +95,23 @@
   overflow-x: hidden;
 }
 
+.player{
+  position: relative;
+}
+
 .playerHpText, .monsterHpText{
   color: #ffffff;
-  font-size: 50px;
   font-weight: bold;
   position: absolute;
   top: 20%;
 }
 
 .playerHpText{
-  left: 20%;
+  left: -5%;
 }
 
 .monsterHpText{
-  left: 110%;
+  left: 95%;
 }
 
 .lifeBox{
@@ -198,6 +201,10 @@
 }
 
 @media screen and (min-width: 796px) { /* pc用スタイル */
+  .playerHpText, .monsterHpText{
+    font-size: 50px;
+  }
+
   .lifeBox{
     height: 15px;
     width: 250px;
@@ -232,6 +239,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .playerHpText, .monsterHpText{
+    font-size: 30px;
   }
 
   .lifeBox{
