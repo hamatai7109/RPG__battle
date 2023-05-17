@@ -199,6 +199,18 @@ function runAway(){
 
 //にげる▶「はい」
 function yes(){
+  document.getElementById('message').textContent = player.name + 'は にげだした、、、'
+  document.getElementById('playerImg').animate(//プレイヤーが画面左にスライドアウト。
+    [
+      {transform: 'translateX(0%)', opacity: 1},
+      {transform: 'translateX(-60%)', opacity: 0},
+      {transform: 'translateX(-100%)', opacity: 0}
+    ],
+    {
+      duration: 500,
+      fill: 'forwards'
+    }
+  );
   window.location.reload();
 }
 
