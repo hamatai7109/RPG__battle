@@ -16,6 +16,19 @@ async function suraimuMove(){
 async function dayDream(){
   document.getElementById('message').textContent = monsterName + "は ボーッとしている";
   await sleep(1000);
+  document.getElementById('monsterHpText').textContent = "・・・";
+  document.getElementById('monsterHpText').style.textShadow = '1px 1px #ffffff';
+  document.getElementById('monsterHpText').animate(
+    [
+      {transform: 'scale(0.5, 0.5)',top: '30%', opacity:0},
+      {transform: 'scale(1, 1)',top: '25%', opacity:1},
+      {transform: 'scale(2, 2)',top: '20%', opacity:0},
+    ],
+    {
+      duration: 1000,
+      fill: 'forwards'
+    }
+  )
 }
 
 //あそんでいる
@@ -35,8 +48,21 @@ async function play(){
     );
 }
 
-//ボーッとする
+//ねる
 async function nap(){
   document.getElementById('message').textContent = monsterName + "は ねてしまった";
   await sleep(1000);
+  document.getElementById('monsterHpText').textContent = "ZZZZZ";
+  document.getElementById('monsterHpText').style.textShadow = '1px 1px #ffffff';
+  document.getElementById('monsterHpText').animate(
+    [
+      {transform: 'scale(0.5, 0.5)',top: '30%', opacity:0},
+      {transform: 'scale(1, 1)',top: '25%', opacity:1},
+      {transform: 'scale(2, 2)',top: '20%', opacity:0},
+    ],
+    {
+      duration: 1000,
+      fill: 'forwards'
+    }
+  )
 }
